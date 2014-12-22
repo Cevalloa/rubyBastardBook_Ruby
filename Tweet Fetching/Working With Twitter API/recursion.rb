@@ -38,11 +38,34 @@ end
 
 puts recursive_factorial(6)
 
-# (5) * 6
-# (4) * 5
-# (3) * 4
-# (2) * 3
-# (1) * 1
 
+
+# (5) * 6 -> 720
+# (4) * 5 -> 120
+# (3) * 4 -> 24
+# (2) * 3 -> 6
+# (1) * 2 -> 2
+# (1) * 1 -> 1
+
+#define a recursive palindrome
+
+puts "racecar"[1..-2]
+
+def palindrome(word)
+	if word.length == 0 || word.length == 1
+		return true
+	end
+
+	if word[0] == word[-1]
+		palindrome(word[1..-2])
+	else
+		return false
+	end
+
+
+end
+
+puts palindrome("racecar")
+puts palindrome("asdkj")
 
 
