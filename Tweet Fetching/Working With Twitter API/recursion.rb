@@ -69,3 +69,19 @@ puts palindrome("racecar")
 puts palindrome("asdkj")
 
 
+#prints n bottles on the wall, until no more bottles of beer on the wall
+
+def bottles(number)
+	return "No more bottles of beer on the wall" if number == 0
+
+	puts "#{number} bottles of beer on the wall"
+	bottles(number -1)
+
+end
+
+puts bottles(5)
+
+
+
+
+
