@@ -82,6 +82,50 @@ end
 puts bottles(5)
 
 
+#fibonacci value of that position
+#add first number to second number, set as third number
+def fibonacci(value)
+	if value == 0
+		return 0
+	elsif value == 1
+		return 1
+
+	
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
