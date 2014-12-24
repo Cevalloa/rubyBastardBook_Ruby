@@ -117,6 +117,54 @@ end
 
 #['a','c','e'].zip(['b', 'd', 'f'].zip())
 
+array = [1,2,3]
+puts array[0..(array.length/(2-1))]
+
+
+#recursive function that flattens an array
+def flattenor(array)
+	return array[0] if array.length == 1
+
+	array << flattenor(array[0..(array.length/(2-1))])
+	array << flattenor(array[array.length/2..array.length-1])
+
+end
+
+puts flattenor([[1, 2], [3, 4]])
+
+#add to array if there is one item
+
+# array << flattenor[0] if flattenor.length == 0
+
+# if array.length == 1
+# 	grandarray << array[0]
+# else
+
+
+
+
+
+
+def non_recursive(array)
+larger_array = []
+
+array.each do |arrayo|
+	arrayo.each do |item|
+		larger_array << item
+	end
+	end
+
+end
+
+
+
+
+
+
+
+
+
+
 
 
 

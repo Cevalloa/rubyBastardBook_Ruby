@@ -46,3 +46,31 @@ def recursive_factorial(0)
 	recursive_factorial(number -1) * number
 	
 end
+
+
+
+
+
+
+0 + 1 + 1 + 2 + 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
