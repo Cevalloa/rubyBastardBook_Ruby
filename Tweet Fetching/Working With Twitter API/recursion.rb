@@ -151,14 +151,29 @@ array.each do |arrayo|
 end
 
 #roman_mapping hash
-def map_hash(mod, result, roman_hash)
-	roman_hash.each_key do |key|
+def map_hash(mod, result)
+	roman_mapping = {
+  1000 => "M",
+  900 => "CM",
+  500 => "D",
+  400 => "CD",
+  100 => "C",
+  90 => "XC",
+  50 => "L",
+  40 => "XL",
+  10 => "X",
+  9 => "IX",
+  5 => "V",
+  4 => "IV",
+  1 => "I"
+}
+	roman_mapping.each_key do |key|
 
 	quotient, mod = result.divmod(key)
 
 		if quotient > 0
 			result += roman_hash[key] * quotient
-			map_hash(mod, result, roman_hash)
+			map_hash(mod, result)
 		else
 			return result
 		end	
