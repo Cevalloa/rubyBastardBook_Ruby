@@ -122,28 +122,23 @@ puts array[0..(array.length/(2-1))]
 
 
 #recursive function that flattens an array
-def flattenor(array)
-	return array[0] if array.length == 1
-
-	array << flattenor(array[0..(array.length/(2-1))])
-	array << flattenor(array[array.length/2..array.length-1])
+def flattenor(array, result = [])
+	array.each do |element|
+		if element.kind_of? Array
+			flattenor(element, result)
+		else
+			result << element
+		end
+	end
+	result
 
 end
 
 puts flattenor([[1, 2], [3, 4]])
 
 #add to array if there is one item
-
-# array << flattenor[0] if flattenor.length == 0
-
-# if array.length == 1
-# 	grandarray << array[0]
-# else
-
-
-
-
-
+#each element of array, see if it is an array
+# if it is an array, run the flattenor, pass the "value" with result array
 
 def non_recursive(array)
 larger_array = []
@@ -153,6 +148,22 @@ array.each do |arrayo|
 		larger_array << item
 	end
 	end
+end
+
+#roman_mapping hash
+def map_hash(mod, result, roman_hash)
+	roman_hash.each_key do |key|
+
+	quotient, mod = result.divmod(key)
+
+		if quotient > 0
+			result += roman_hash[key] * quotient
+			map_hash(mod, result, roman_hash)
+		else
+			return result
+		end	
+
+end
 
 end
 
