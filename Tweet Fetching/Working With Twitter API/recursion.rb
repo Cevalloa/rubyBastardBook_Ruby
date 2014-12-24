@@ -89,20 +89,33 @@ def fibonacci(value)
 		return 0
 	elsif value == 1
 		return 1
-
-	
+	else
+		fibonacci(n-1) + fibonacci(n-2)
+	end
 
 end
 
+#recursion goes calculates it down.. once it hits a "return" it starts bringing the return values up
 
+#recursive function that flattens an array
+def flatten(array)
 
+end
 
+def zip(first,second)
+	puts first.zip(second).flatten
+end
 
+ firsto = ['a', 'c', 'e']
+ secondo = ['b', 'd', 'f']
+ zip(firsto, secondo)
 
+# first = ['a', 'c', 'e']
+# second = ['b', 'd', 'f']
+# zip(first, second)
+#     #=> ['a', 'b', 'c', 'd', 'e', 'f']
 
-
-
-
+#['a','c','e'].zip(['b', 'd', 'f'].zip())
 
 
 
