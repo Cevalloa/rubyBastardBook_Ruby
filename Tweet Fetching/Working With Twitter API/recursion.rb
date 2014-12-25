@@ -182,6 +182,101 @@ end
 
 end
 
+#roman numeral to an integer
+# def roman_toI(str, result =0)
+# 	roman_mapping = {
+#   "M" => 1000,
+#   "CM" => 900,
+#   "D" => 500,
+#   "CD" => 400,
+#   "C" => 100,
+#   "XC" => 90,
+#   "L" => 50,
+#   "XL" => 40,
+#   "X" => 10,
+#   "IX" => 9,
+#   "V" => 5,
+#   "IV" => 4,
+#   "I" => 1
+# }
+# 	return result if str.empty?
+# 	roman_mapping.each_key do |roman|
+# 		if str.start_with?(roman)
+# 			result += roman_mapping[roman]
+# 			str = str.slice(roman.length, str.length)
+# 			return roman_to_integer(str, result)
+# 		end
+# 	end
+# end
+
+#for every item in the array, is the array length
+#Only divisible by itself and 1
+
+def prime(num)
+count = 0
+
+	for l in (1..num)
+		if num % l == 0 
+			count += 1
+		end
+	end
+
+	return true if count == 2
+
+end
+puts prime(1668)
+
+def prime_Again(numo)
+
+	for l in (2...numo)
+		if numo % l == 0
+			return "false"
+		end
+	end
+
+	return "true"
+end
+
+puts prime_Again(1668)
+
+puts "-" * 40
+
+#fibonacci sequence  with iteration
+def fibs(add_upto)
+	if add_upto < 2
+		return add_upto
+	end
+
+
+	array_to_return = []
+	for l in (0..add_upto)
+		if l < 2
+			array_to_return << l
+		else
+		array_to_return[l] = (array_to_return[l-2] + array_to_return[l-1])
+	end
+	end
+	array_to_return
+end
+
+puts fibs(5)
+
+#alternate fibonacci equence with iteration 
+def fibsTwo(num)
+	curr = 0 #stores current array index
+	next_num = 1  #stores next value up
+	temp = 0 #stores last two combined
+	while (num -= 1) > 0 do
+		temp = curr + next_num #adds the current array index & next value
+		curr = next_num	#moves index to right 
+		next_num = temp	#stores the added two values to the next number
+
+		end
+	return next_num
+end
+
+#recursive method
+
 
 
 
