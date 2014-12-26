@@ -276,9 +276,46 @@ def fibsTwo(num)
 end
 
 #recursive method
+def fibRecursive(val)
+	return val if val < 2
 
+	fibRecursive(val-2) + fibRecursive(val-1)
 
+end
 
+#merge sort
+#breaks list down, two by two
+#once down to only one
+#compare the two, the lower one gets placed first
+#return sorted array, and compare the first one of each, lowest one gets placed first
+
+puts "-" * 40
+
+def merge_sort(arr)
+	left, right, result = []
+
+	if arr.size <= 1
+		return arr
+	else
+		middle = arr.size/2
+		left = arr[0..middle - 1]
+		right = arr[middle..-1]
+
+		left = merge_sort(left)
+		right = merge_sort(right)
+
+		if left.last <= right [0]
+			left.concat right
+			return left
+		end
+		result = merge(left, right)
+		return result
+
+	end
+	
+end
+
+puts merge_sort([1,2,3,4,5,6,7,8], [9,10,11,12,13,14,15,16])
 
 
 
