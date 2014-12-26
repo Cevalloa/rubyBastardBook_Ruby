@@ -48,11 +48,54 @@ def recursive_factorial(0)
 end
 
 
+def merge(left, right) #merges two sorted arrays together from lowest to highest
+	result = [] #end result array
+	while left.size > 0 and right.size > 0 #while the left and right array are over 0
+		if left[0] <= right[0]	#if the first left is less than the first right
+			result << left[0]	#then add the first left array to the result
+			left = left[1..-1]	# reduce the size of the left array..start it at the second and keep the last value
+		else
+			result << right[0]   #the right is bigger, so move the right to the result
+			right = right[1..-1]	#decrease the size of the right, start it at the second value and keep the last value
+		end
+	end  #ends when one of the arrays is not bigger than 0
 
+	if left.size > 0   #if the left one still has objects within it..
+		result.concat left	#add the rest of the left array onto the result
+	end
+	if right.size > 0	#if the right one still has objects within it..
+		result.concat right	#add the rest of the objects to the result
+	end
 
+	return result
 
+end
 
-0 + 1 + 1 + 2 + 3
+def merge_sort(arr) #breaks them down, then calls merge to merge them together
+	left, right, result = [] #create 3 arrays
+
+	#if the array is less than or equal to 1, return it.. or else keep breaking!
+	if arr.size <= 1 #if the array size is less than 1, return array
+		return arr
+	else
+		middle = arr.size/2 #find middle spot of array
+		left = arr[0..middle - 1] #split left array, 0 to middle minus one
+		right = arr[middle..-1] #split right array, middle to last
+
+		left = merge_sort(left) # now call same method on left array
+		right = merge_sort(right) #now call same method on right array
+
+		#once they are back from merge sort..
+		if left.last <= right [0] 
+			left.concat right
+			return left
+		end
+		result = merge(left, right)
+		return result
+
+	end
+	
+end
 
 
 
