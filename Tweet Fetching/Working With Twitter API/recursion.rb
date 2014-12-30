@@ -408,37 +408,9 @@ puts merge_sort([1,2,3,4,5,6,7,8], [9,10,11,12,13,14,15,16])
 #join bits, but sort them
 
 #Notes
-# def merge_sort(arr) #breaks them down, then calls merge to merge them together
-# 	left, right, result = [] #create 3 arrays
 
-# 	#if the array is less than or equal to 1, return it.. or else keep breaking!
-# 	if arr.size <= 1 #if the array size is less than 1, return array
-# 		return arr
-# 	else
-# 		middle = arr.size/2 #find middle spot of array
-# 		left = arr[0..middle - 1] #split left array, 0 to middle minus one
-# 		right = arr[middle..-1] #split right array, middle to last
-
-# 		left = merge_sort(left) # now call same method on left array
-# 		right = merge_sort(right) #now call same method on right array
-
-# 		#once they are back from merge sort..
-# 		if left.last <= right [0] 
-# 			left.concat right
-# 			return left
-# 		end
-# 		result = merge(left, right)
-# 		return result
-
-# 	end
-	
-# end
-
-def merge_confirm(arry1, arry2)
-
-
-end
-
+#binary search, simple implementation
+def binary_search()
 
 
 
