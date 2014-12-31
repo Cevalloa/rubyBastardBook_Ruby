@@ -134,12 +134,99 @@ class BST
 	end
 
 	def add_to_bst(node, ancestor)
+		return node if ancestor.nil?   #if the ancestor is empty, return node
 
-		node.parent = ancestor
+		node.parent = ancestor   #now this node's parent is the ancestor
+		if node.value < ancestor.value   
+			ancestor.left_child = add_to_bst(node, ancestor.left_child)
+		else
+			ancestor.right_child = add_to_bst(node, ancestor.right_child)
+		end
+
+		ancestor
 
 	end
 
 end
+
+#Merge sort
+#keep splitting until one
+#then keep merging them sorted
+def merge_again(arr1, arr2)
+	final_array = []
+	while(arr1.size > 0 && arr2.size > 0)
+		if arr1[0] < arr2[0]
+			final_array << arr1[0]
+			arr1 = arr1[1...arr1.length]
+		else
+			final_array << arr2[0]
+			arr2 = arr2[1...arr2.length]
+		end
+
+	end
+
+	if arr1.length == 0
+		final_array.concat arr2
+	elsif arr2.length == 0
+		final_array.concat arr1
+	end
+
+	final_array
+end
+
+def merge_sort_again(unsorted_arr)
+	return unsorted_arr if unsorted_arr.length == 1
+
+	mid = unsorted_arr.length/2
+
+	left = merge_sort_again(unsorted_arr[0...mid])
+	right = merge_sort_again(unsorted_arr[mid..-1])
+
+	merge_again(left,right)
+
+end
+
+
+#reiteration of binary search tree
+class Node_again
+
+	attr_accessor :value, :parent, :left_child, :right_child
+
+	def initialize(value, parent=nil, left_child=nil, right_child=nil)
+		@value = value
+		@parent = parent
+		@left_child = left_child
+		@right_child
+	end
+
+end
+
+class BST_again
+
+	attr_accessor :root
+
+	def initialize(noder = nil)
+		if noder != nil
+			@node = noder
+		end
+	end
+
+	def bst_deez_digits(arr1)
+		BST_again_again = BST_again.new
+
+		arr1.each {|data| BST_again_again.add(data)}
+
+		BST_again_again
+	end
+
+	def add(noder_data) #checks if root is set.. if not
+
+
+	end
+
+
+end
+
 
 
 
