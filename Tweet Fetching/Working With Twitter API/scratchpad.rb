@@ -97,6 +97,49 @@ def merge_sort(arr) #breaks them down, then calls merge to merge them together
 	
 end
 
+#fiddling with binary search tree
+class Node
+
+	attr_accessor :value, :parent, :left_child, :right_child
+
+	#initialize the node
+	def initialize(value, parent = nil, left_child =nil, right_child=nil)
+		@value = value
+		@parent = parent
+		@left_child = left_child
+		@right_child = right_child
+	end
+
+end
+
+class BST
+
+	def initialize(root_data = nil)
+		@root = Node.new(root_data) unless root_data.nil?   #set the root if one is passed in
+	end
+
+	def BST.build_tree data_array  #creates the tree
+		bst = BST.new #create a new instance of a binary search tree
+		data_array.each{|data| bst.add(data)}  #add each item to data array
+		return bst  #return the binary search tree
+	end
+
+	def add node_data #adds the node, sets the root if non existant
+		if @root.nil?
+			@root = Node.new(node_data) #create instance of node, set to root
+		else							# if there already is a root
+			add_to_bst(Node.new(node_data), root)  #send in data & highest node
+		end
+
+	end
+
+	def add_to_bst(node, ancestor)
+
+		node.parent = ancestor
+
+	end
+
+end
 
 
 

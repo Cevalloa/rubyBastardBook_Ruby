@@ -26,3 +26,66 @@ puts binary_search([1,2,3,4,5,6,7,8], 10)
 def bubble_sort(unsorted_array)
 
 end
+
+#Node
+class Node
+	attr_accessor :value, :parent, :left_child, :right_child
+
+	def initialize(value, parent = nil, left_child = nil, right_child = nil)
+		@value = value
+		@parent = parent
+		@left_child = left_child
+		@right_child = right_child
+	end
+end
+
+#Binary Search Tree
+class BST
+	attr_accessor :root
+
+	# Sets the root of the BST if data for the root is provided
+	def initialize(root_data = nil)
+		@root = Node.new(root_data) unless root_data.nil?
+	end
+
+	#this is a class method that creates the BST with an array passed in
+	def BST.build_tree data_array
+		bst = BST.new
+		data_array.each {|data| bst.add(data)}
+		return bst
+	end
+
+	#Make the node for the given info, add said node to BST
+	def add node_data
+		if @root.nil?
+			@root = Node.new(node_data)
+		else
+			add_to_bst(Node.new(node_data), @root)
+	end
+
+	#Works with add method to add node to BST
+	def add_to_bst(node, ancestor)
+		return node if ancestor.nil?
+
+		node.parent = ancestor   #parent of the node is node above
+		if node.value < ancestor.value
+			ancestor.left_child = add_to_bst(node, ancestor.left_child)
+		else
+			ancestor.right_child = add_to_bst(node, ancestor.right_child)
+		end
+		ancestor
+
+	end
+
+	#array of values in the BST when the BST is traveresed inorder
+	
+
+
+end
+
+
+
+
+
+
+
