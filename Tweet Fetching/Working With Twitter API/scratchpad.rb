@@ -205,9 +205,63 @@ class BST_again
 
 	attr_accessor :root
 
+
 	def initialize(noder = nil)
 		if noder != nil
-			@node = noder
+			@root = noder
+		end
+	end
+
+	def create_tree(arr1)
+		BST2 = BST_again.new
+		arr1.each {|data| BST2.add(data)}
+		BST2
+	end
+
+	def add(node_data)
+		if @root == nil
+			@root.value = Node_again.new(node_data)
+		else
+			add_helper(Node_again.new(node_data), root)
+		end
+	end
+
+	def add_helper(noder, ancestor)
+
+		return noder if ancestor.nil?
+
+	noder.parent = ancestor
+
+	if noder.value < ancestor.value
+		ancestor.left_child = add_helper(noder, ancestor.left_child)
+	elsif noder.value > ancestor.value
+		ancestor.right_child = add_helper(noder, ancestor.right_child)
+	end
+		
+	ancestor
+
+
+	end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	def initialize(noder = nil)
+		if noder != nil
+			@root = noder
 		end
 	end
 

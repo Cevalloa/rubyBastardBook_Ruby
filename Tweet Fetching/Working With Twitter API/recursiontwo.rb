@@ -65,13 +65,16 @@ class BST
 
 	#Works with add method to add node to BST
 	def add_to_bst(node, ancestor)
-		return node if ancestor.nil?
+		return node if ancestor.nil?   #recursive base case
 
-		node.parent = ancestor   #parent of the node is node above
-		if node.value < ancestor.value
-			ancestor.left_child = add_to_bst(node, ancestor.left_child)
+		node.parent = ancestor   #this node's parent is the one above
+		if node.value < ancestor.value   #if the nodes value is less than the ancestor
+			ancestor.left_child = add_to_bst(node, ancestor.left_child)   
+			#set the left node.. notice it will return itself if the node is empty
+			#send in the current node for debate, and the supposed location of the new node
 		else
 			ancestor.right_child = add_to_bst(node, ancestor.right_child)
+			#NOTICE! You don't add it until it finds a spot (Always up for debate)
 		end
 		ancestor
 
