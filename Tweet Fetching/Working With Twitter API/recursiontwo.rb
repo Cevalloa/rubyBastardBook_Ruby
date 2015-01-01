@@ -81,8 +81,10 @@ class BST
 	end
 
 	#array of values in the BST when the BST is traveresed inorder
-	
-
+	def inorder
+		tree_data = []
+		tree_data = inorder_traverse(@root, tree_data)
+	end
 
 end
 
