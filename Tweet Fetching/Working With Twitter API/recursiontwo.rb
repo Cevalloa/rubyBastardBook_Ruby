@@ -86,6 +86,14 @@ class BST
 		tree_data = inorder_traverse(@root, tree_data)
 	end
 
+	def inorder_traverse(node, final_array)
+		return final_array if node.nil?
+		inorder_traverse(node.left_child, final_array)
+		final_array << node.value
+		inorder_traverse(node.left_child, final_array)
+	end
+
+
 end
 
 
