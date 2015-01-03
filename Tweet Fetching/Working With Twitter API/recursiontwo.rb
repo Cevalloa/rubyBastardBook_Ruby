@@ -93,6 +93,33 @@ class BST
 		inorder_traverse(node.left_child, final_array)
 	end
 
+	#print out BST nodes in inorder form
+	def inorder_show
+		puts "ROOT: #{@root.value}\n"
+		inorder_show_helper @root
+	end
+
+	#does in order traversal, but with to_s
+	def inorder_show_helper node
+		return nil if node.nil?
+
+		inorder_show_helper(node.left_child)
+		puts node.value.to_s
+		inorder_show_helper(node.right_child)
+	end
+
+	#Breadth first search example with BST, BFS uses a queue
+	def breadth_first_search target
+		open_queue = [@root]
+		until open_queue.empty?
+			current = open_queue.shift
+			return current if current.value == target
+			open_queue.push current.left_child unless current.left_child.nil?
+			open_queue.push current.right_child unless current.right_child.nil?
+		end
+		nil
+	end
+
 
 end
 
