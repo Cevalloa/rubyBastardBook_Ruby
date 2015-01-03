@@ -120,6 +120,16 @@ class BST
 		nil
 	end
 
+	#Depth first search example with BST, DFS uses a queue
+	def depth_first_search target
+		open_stack = [@root]
+		until open_queue.empty?
+			current =  open_queue.pop
+			return current if current.value == target
+			#left off here (unfinished)
+
+	end
+
 
 end
 
