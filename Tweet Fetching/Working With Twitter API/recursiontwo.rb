@@ -127,6 +127,11 @@ class BST
 			current =  open_queue.pop
 			return current if current.value == target
 			#left off here (unfinished)
+			open_stack.pop current.right_child unless current.right_child.nil?
+			open_stack.pop current.left_child  unless current.left_child.nil?
+		end
+
+		nil
 
 	end
 
