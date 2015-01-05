@@ -111,9 +111,9 @@ class BST
 	#Breadth first search example with BST, BFS uses a queue
 	def breadth_first_search target
 		open_queue = [@root]
-		until open_queue.empty?
-			current = open_queue.shift
-			return current if current.value == target
+		until open_queue.empty? #checks if the queue is empty, if so.. return it
+			current = open_queue.shift	#checks the first in line of the queue
+			return current if current.value == target	#returns it if it is found!
 			open_queue.push current.left_child unless current.left_child.nil?
 			open_queue.push current.right_child unless current.right_child.nil?
 		end
