@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class BST - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="Object.html">Object</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-build_tree">::build_tree</a>
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-add">#add</a>
+    
+    <li ><a href="#method-i-add_to_bst">#add_to_bst</a>
+    
+    <li ><a href="#method-i-breadth_first_search">#breadth_first_search</a>
+    
+    <li ><a href="#method-i-depth_first_search">#depth_first_search</a>
+    
+    <li ><a href="#method-i-inorder">#inorder</a>
+    
+    <li ><a href="#method-i-inorder_show">#inorder_show</a>
+    
+    <li ><a href="#method-i-inorder_show_helper">#inorder_show_helper</a>
+    
+    <li ><a href="#method-i-inorder_traverse">#inorder_traverse</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-BST">
+  <h1 id="class-BST" class="class">
+    class BST
+  </h1>
+
+  <section class="description">
+    
+<p>Binary Search Tree</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-root" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">root</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-build_tree" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">build_tree</span><span
+            class="method-args">(data_array)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>this is a class method that creates the <a href="BST.html">BST</a> with an
+array passed in</p>
+          
+          
+
+          
+          <div class="method-source-code" id="build_tree-source">
+            <pre><span class="ruby-comment"># File Tweet Fetching/Working With Twitter API/recursiontwo.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BST</span>.<span class="ruby-identifier">build_tree</span> <span class="ruby-identifier">data_array</span>
+        <span class="ruby-identifier">bst</span> = <span class="ruby-constant">BST</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">data_array</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">data</span><span class="ruby-operator">|</span> <span class="ruby-identifier">bst</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">data</span>)}
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">bst</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(root_data = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the root of the <a href="BST.html">BST</a> if data for the root is
+provided</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File Tweet Fetching/Working With Twitter API/recursiontwo.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">root_data</span> = <span class="ruby-keyword">nil</span>)
+        <span class="ruby-ivar">@root</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">root_data</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">root_data</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-add" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add</span><span
+            class="method-args">(node_data)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Make the node for the given info, add said node to <a
+href="BST.html">BST</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="add-source">
+            <pre><span class="ruby-comment"># File Tweet Fetching/Working With Twitter API/recursiontwo.rb, line 59</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier">add</span> <span class="ruby-identifier">node_data</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@root</span>.<span class="ruby-identifier">nil?</span>
+                        <span class="ruby-ivar">@root</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">node_data</span>)
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">add_to_bst</span>(<span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">node_data</span>), <span class="ruby-ivar">@root</span>)
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-comment">#Works with add method to add node to BST</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier">add_to_bst</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">ancestor</span>)
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">node</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ancestor</span>.<span class="ruby-identifier">nil?</span>   <span class="ruby-comment">#recursive base case</span>
+
+                <span class="ruby-identifier">node</span>.<span class="ruby-identifier">parent</span> = <span class="ruby-identifier">ancestor</span>   <span class="ruby-comment">#this node&#39;s parent is the one above</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">ancestor</span>.<span class="ruby-identifier">value</span>   <span class="ruby-comment">#if the nodes value is less than the ancestor</span>
+                        <span class="ruby-identifier">ancestor</span>.<span class="ruby-identifier">left_child</span> = <span class="ruby-identifier">add_to_bst</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">ancestor</span>.<span class="ruby-identifier">left_child</span>)   
+                        <span class="ruby-comment">#set the left node.. notice it will return itself if the node is empty</span>
+                        <span class="ruby-comment">#send in the current node for debate, and the supposed location of the new node</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">ancestor</span>.<span class="ruby-identifier">right_child</span> = <span class="ruby-identifier">add_to_bst</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">ancestor</span>.<span class="ruby-identifier">right_child</span>)
+                        <span class="ruby-comment">#NOTICE! You don&#39;t add it until it finds a spot (Always up for debate)</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">ancestor</span>
+
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-comment">#array of values in the BST when the BST is traveresed inorder</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier">inorder</span>
+                <span class="ruby-identifier">tree_data</span> = []
+                <span class="ruby-identifier">tree_data</span> = <span class="ruby-identifier">inorder_traverse</span>(<span class="ruby-ivar">@root</span>, <span class="ruby-identifier">tree_data</span>)
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier">inorder_traverse</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">final_array</span>)
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">final_array</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-identifier">inorder_traverse</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">left_child</span>, <span class="ruby-identifier">final_array</span>)
+                <span class="ruby-identifier">final_array</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">value</span>
+                <span class="ruby-identifier">inorder_traverse</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">left_child</span>, <span class="ruby-identifier">final_array</span>)
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-comment">#print out BST nodes in inorder form</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier">inorder_show</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;ROOT: #{@root.value}\n&quot;</span>
+                <span class="ruby-identifier">inorder_show_helper</span> <span class="ruby-ivar">@root</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-comment">#does in order traversal, but with to_s</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier">inorder_show_helper</span> <span class="ruby-identifier">node</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">nil?</span>
+
+                <span class="ruby-identifier">inorder_show_helper</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">left_child</span>)
+                <span class="ruby-identifier">puts</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>
+                <span class="ruby-identifier">inorder_show_helper</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">right_child</span>)
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-comment">#Breadth first search example with BST, BFS uses a queue</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier">breadth_first_search</span> <span class="ruby-identifier">target</span>
+                <span class="ruby-identifier">open_queue</span> = [<span class="ruby-ivar">@root</span>]
+                <span class="ruby-keyword">until</span> <span class="ruby-identifier">open_queue</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-comment">#checks if the queue is empty, if so.. return it</span>
+                        <span class="ruby-identifier">current</span> = <span class="ruby-identifier">open_queue</span>.<span class="ruby-identifier">shift</span>   <span class="ruby-comment">#checks the first in line of the queue</span>
+                        <span class="ruby-keyword">return</span> <span class="ruby-identifier">current</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">target</span>    <span class="ruby-comment">#returns it if it is found!</span>
+                        <span class="ruby-identifier">open_queue</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">left_child</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">left_child</span>.<span class="ruby-identifier">nil?</span>
+                        <span class="ruby-identifier">open_queue</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">right_child</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">right_child</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-comment">#Depth first search example with BST, DFS uses a stack</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier">depth_first_search</span> <span class="ruby-identifier">target</span>
+                <span class="ruby-identifier">open_stack</span> = [<span class="ruby-ivar">@root</span>]
+                <span class="ruby-keyword">until</span> <span class="ruby-identifier">open_stack</span>.<span class="ruby-identifier">empty?</span>
+                        <span class="ruby-identifier">current</span> =  <span class="ruby-identifier">open_stack</span>.<span class="ruby-identifier">pop</span> <span class="ruby-comment">#currently checks the top element in the stack</span>
+                        <span class="ruby-keyword">return</span> <span class="ruby-identifier">current</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">target</span>
+                        <span class="ruby-comment">#left off here (unfinished)</span>
+                        <span class="ruby-identifier">open_stack</span>.<span class="ruby-identifier">pop</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">right_child</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">right_child</span>.<span class="ruby-identifier">nil?</span>
+                        <span class="ruby-identifier">open_stack</span>.<span class="ruby-identifier">pop</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">left_child</span>  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">left_child</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-keyword">end</span>
+
+                <span class="ruby-keyword">nil</span>
+
+        <span class="ruby-keyword">end</span>
+
+
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-add_to_bst" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_to_bst</span><span
+            class="method-args">(node, ancestor)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Works with add method to add node to <a href="BST.html">BST</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="add_to_bst-source">
+            <pre><span class="ruby-comment"># File Tweet Fetching/Working With Twitter API/recursiontwo.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_to_bst</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">ancestor</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">node</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ancestor</span>.<span class="ruby-identifier">nil?</span>   <span class="ruby-comment">#recursive base case</span>
+
+        <span class="ruby-identifier">node</span>.<span class="ruby-identifier">parent</span> = <span class="ruby-identifier">ancestor</span>   <span class="ruby-comment">#this node&#39;s parent is the one above</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">ancestor</span>.<span class="ruby-identifier">value</span>   <span class="ruby-comment">#if the nodes value is less than the ancestor</span>
+                <span class="ruby-identifier">ancestor</span>.<span class="ruby-identifier">left_child</span> = <span class="ruby-identifier">add_to_bst</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">ancestor</span>.<span class="ruby-identifier">left_child</span>)   
+                <span class="ruby-comment">#set the left node.. notice it will return itself if the node is empty</span>
+                <span class="ruby-comment">#send in the current node for debate, and the supposed location of the new node</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">ancestor</span>.<span class="ruby-identifier">right_child</span> = <span class="ruby-identifier">add_to_bst</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">ancestor</span>.<span class="ruby-identifier">right_child</span>)
+                <span class="ruby-comment">#NOTICE! You don&#39;t add it until it finds a spot (Always up for debate)</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">ancestor</span>
+
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-breadth_first_search" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">breadth_first_search</span><span
+            class="method-args">(target)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Breadth first search example with <a href="BST.html">BST</a>, BFS uses a
+queue</p>
+          
+          
+
+          
+          <div class="method-source-code" id="breadth_first_search-source">
+            <pre><span class="ruby-comment"># File Tweet Fetching/Working With Twitter API/recursiontwo.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">breadth_first_search</span> <span class="ruby-identifier">target</span>
+        <span class="ruby-identifier">open_queue</span> = [<span class="ruby-ivar">@root</span>]
+        <span class="ruby-keyword">until</span> <span class="ruby-identifier">open_queue</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-comment">#checks if the queue is empty, if so.. return it</span>
+                <span class="ruby-identifier">current</span> = <span class="ruby-identifier">open_queue</span>.<span class="ruby-identifier">shift</span>   <span class="ruby-comment">#checks the first in line of the queue</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">current</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">target</span>    <span class="ruby-comment">#returns it if it is found!</span>
+                <span class="ruby-identifier">open_queue</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">left_child</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">left_child</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-identifier">open_queue</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">right_child</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">right_child</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-depth_first_search" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">depth_first_search</span><span
+            class="method-args">(target)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Depth first search example with <a href="BST.html">BST</a>, DFS uses a
+stack</p>
+          
+          
+
+          
+          <div class="method-source-code" id="depth_first_search-source">
+            <pre><span class="ruby-comment"># File Tweet Fetching/Working With Twitter API/recursiontwo.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">depth_first_search</span> <span class="ruby-identifier">target</span>
+        <span class="ruby-identifier">open_stack</span> = [<span class="ruby-ivar">@root</span>]
+        <span class="ruby-keyword">until</span> <span class="ruby-identifier">open_stack</span>.<span class="ruby-identifier">empty?</span>
+                <span class="ruby-identifier">current</span> =  <span class="ruby-identifier">open_stack</span>.<span class="ruby-identifier">pop</span> <span class="ruby-comment">#currently checks the top element in the stack</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">current</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">target</span>
+                <span class="ruby-comment">#left off here (unfinished)</span>
+                <span class="ruby-identifier">open_stack</span>.<span class="ruby-identifier">pop</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">right_child</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">right_child</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-identifier">open_stack</span>.<span class="ruby-identifier">pop</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">left_child</span>  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">left_child</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">nil</span>
+
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-inorder" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inorder</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>array of values in the <a href="BST.html">BST</a> when the <a
+href="BST.html">BST</a> is traveresed inorder</p>
+          
+          
+
+          
+          <div class="method-source-code" id="inorder-source">
+            <pre><span class="ruby-comment"># File Tweet Fetching/Working With Twitter API/recursiontwo.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inorder</span>
+        <span class="ruby-identifier">tree_data</span> = []
+        <span class="ruby-identifier">tree_data</span> = <span class="ruby-identifier">inorder_traverse</span>(<span class="ruby-ivar">@root</span>, <span class="ruby-identifier">tree_data</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-inorder_show" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inorder_show</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>print out <a href="BST.html">BST</a> nodes in inorder form</p>
+          
+          
+
+          
+          <div class="method-source-code" id="inorder_show-source">
+            <pre><span class="ruby-comment"># File Tweet Fetching/Working With Twitter API/recursiontwo.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inorder_show</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;ROOT: #{@root.value}\n&quot;</span>
+        <span class="ruby-identifier">inorder_show_helper</span> <span class="ruby-ivar">@root</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-inorder_show_helper" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inorder_show_helper</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>does in order traversal, but with to_s</p>
+          
+          
+
+          
+          <div class="method-source-code" id="inorder_show_helper-source">
+            <pre><span class="ruby-comment"># File Tweet Fetching/Working With Twitter API/recursiontwo.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inorder_show_helper</span> <span class="ruby-identifier">node</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">nil?</span>
+
+        <span class="ruby-identifier">inorder_show_helper</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">left_child</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>
+        <span class="ruby-identifier">inorder_show_helper</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">right_child</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-inorder_traverse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inorder_traverse</span><span
+            class="method-args">(node, final_array)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inorder_traverse-source">
+            <pre><span class="ruby-comment"># File Tweet Fetching/Working With Twitter API/recursiontwo.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inorder_traverse</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">final_array</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">final_array</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-identifier">inorder_traverse</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">left_child</span>, <span class="ruby-identifier">final_array</span>)
+        <span class="ruby-identifier">final_array</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">value</span>
+        <span class="ruby-identifier">inorder_traverse</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">left_child</span>, <span class="ruby-identifier">final_array</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

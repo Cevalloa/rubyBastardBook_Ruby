@@ -136,6 +136,11 @@ class BST
 	end
 
 
+	def check_string string 
+		string.split(//) each 
+
+	end
+
 end
 
 
