@@ -120,6 +120,12 @@ class BST
 		nil
 	end
 
+	#start the stack
+	#keep running until the stack is empty
+		#take the top item of the stack
+		#return if the top item is the target
+		#
+
 	#Depth first search example with BST, DFS uses a stack
 	def depth_first_search target
 		open_stack = [@root]
@@ -132,12 +138,6 @@ class BST
 		end
 
 		nil
-
-	end
-
-
-	def check_string string 
-		string.split(//) each 
 
 	end
 
