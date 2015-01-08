@@ -7,3 +7,5 @@ puts "*" * 40
 print "hi"
 print "hi again"
 print "hi hi again"
+
+#end of scratchpad 2
