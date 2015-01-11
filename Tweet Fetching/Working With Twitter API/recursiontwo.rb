@@ -154,7 +154,18 @@ puts "And we're overriding the calculate_interest method!" end
 end
 account = BankAccount.new account.calculate_interest
 
-
+#goes over super real quick
+class Bicycle
+attr_reader :gears, :wheels, :seats
+def initialize(gears = 1) @wheels = 2
+@seats = 1
+@gears = gears
+end end
+class Tandem < Bicycle def initialize(gears)
+B
+super
+@seats = 2 end
+end
 
 
 
