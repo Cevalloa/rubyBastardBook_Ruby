@@ -194,4 +194,33 @@ talk
 puts "Trying 'talk' with an explicit receiver..." obj = Object.new
 obj.talk
 
+#3 equals operator
+class Ticket
+	attr_accessor :venue, :date 
+	def initialize(venue, date)
+		self.venue = venue
+		self.date = date
+	end
+	#overrides when operator (returns true if venues match)
+	def ===(other_ticket)
+		self.venue == other_ticket.venue
+	end
+end
+
+ticket1 = Ticket.new("Town Hall", "07/08/06")
+ticket2 = Ticket.new("Conference Center", "07/08/06")
+ticket3 = Ticket.new("Town Hall", "08/09/06")
+
+puts "Ticket1 is for an event at: #{ticket1.venue}"
+
+case ticket1
+when ticket2
+	puts "ticket 2 wins"
+when ticket3
+	puts "ticket 3 ends"
+else
+	puts "no match"
+end
+
+
 
