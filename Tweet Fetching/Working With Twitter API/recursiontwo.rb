@@ -222,5 +222,33 @@ else
 	puts "no match"
 end
 
+#Integer#times broken down
+class Integer
+	def my_times
+		c = 0
+		until c == self
+			yield(c)
+			c += 1
+		end
+	self
+end
+end
+
+#enumerable#map broken down
+class Array
+	def my_map
+		c = 0 
+		acc = []
+		until c == size
+			acc << yield{self[c]}
+			c += 1
+		end
+		acc
+	end
+end
+
+
+
+
 
 
