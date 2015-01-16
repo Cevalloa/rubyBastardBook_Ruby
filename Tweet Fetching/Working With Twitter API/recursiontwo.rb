@@ -247,8 +247,20 @@ class Array
 	end
 end
 
+#taken from codewars
+def none? list, &block
+  list.none?(&block)
+end
 
-
-
-
+#Finding set of characters in array words
+def findWord(query, array_of_strings)
+    endarray = []
+    array_of_strings.each do |single_string|
+      if single_string.downcase.include?(query.downcase)
+        endarray << single_string
+        end
+    end
+   endarray.empty? ? endarray << "Empty" : endarray
+   
+end
 
