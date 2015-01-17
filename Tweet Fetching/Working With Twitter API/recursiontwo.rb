@@ -264,3 +264,12 @@ def findWord(query, array_of_strings)
    
 end
 
+def sortedlist(array,reverse = false)
+
+	if reverse == false
+		array.sort {|a,b| a <=> b}
+	else
+		array.sort {|a,b| b <=> a}
+	end
+end
+
