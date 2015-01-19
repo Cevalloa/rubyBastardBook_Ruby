@@ -273,3 +273,11 @@ def sortedlist(array,reverse = false)
 	end
 end
 
+#place an item over every third item in an array
+names = %w{David Yukihiro Joe Jim John Joan Jeff Judy}
+names.each_with_index_do |name,i|
+	puts name
+	if (i + 1) % 3 == 0
+		puts "-" * 8
+	end
+end
